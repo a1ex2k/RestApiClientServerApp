@@ -1,0 +1,33 @@
+D:\Texode\ClientApp\bin\Release\InfoCards Client App.exe.config
+D:\Texode\ClientApp\bin\Release\InfoCards Client App.exe.manifest
+D:\Texode\ClientApp\bin\Release\InfoCards Client App.application
+D:\Texode\ClientApp\bin\Release\InfoCards Client App.exe
+D:\Texode\ClientApp\bin\Release\InfoCards Client App.pdb
+D:\Texode\ClientApp\bin\Release\System.Net.Http.Formatting.dll
+D:\Texode\ClientApp\bin\Release\System.Text.Json.dll
+D:\Texode\ClientApp\bin\Release\Newtonsoft.Json.dll
+D:\Texode\ClientApp\bin\Release\System.Memory.dll
+D:\Texode\ClientApp\bin\Release\System.Buffers.dll
+D:\Texode\ClientApp\bin\Release\System.Net.Http.Formatting.xml
+D:\Texode\ClientApp\bin\Release\System.Text.Json.xml
+D:\Texode\ClientApp\obj\Release\ClientApp.csproj.SuggestedBindingRedirects.cache
+D:\Texode\ClientApp\obj\Release\InfoCards Client App.exe.config
+D:\Texode\ClientApp\obj\Release\Views\Card.g.cs
+D:\Texode\ClientApp\obj\Release\Views\MainWindow.g.cs
+D:\Texode\ClientApp\obj\Release\App.g.cs
+D:\Texode\ClientApp\obj\Release\GeneratedInternalTypeHelper.g.cs
+D:\Texode\ClientApp\obj\Release\InfoCards Client App_MarkupCompile.cache
+D:\Texode\ClientApp\obj\Release\InfoCards Client App_MarkupCompile.lref
+D:\Texode\ClientApp\obj\Release\App.baml
+D:\Texode\ClientApp\obj\Release\Views\Card.baml
+D:\Texode\ClientApp\obj\Release\Views\MainWindow.baml
+D:\Texode\ClientApp\obj\Release\InfoCards Client App.g.resources
+D:\Texode\ClientApp\obj\Release\ClientApp.Properties.Resources.resources
+D:\Texode\ClientApp\obj\Release\ClientApp.csproj.GenerateResource.cache
+D:\Texode\ClientApp\obj\Release\ClientApp.csproj.CoreCompileInputs.cache
+D:\Texode\ClientApp\obj\Release\InfoCards Client App.exe.manifest
+D:\Texode\ClientApp\obj\Release\InfoCards Client App.application
+D:\Texode\ClientApp\obj\Release\ClientApp.csproj.CopyComplete
+D:\Texode\ClientApp\obj\Release\InfoCards Client App.exe
+D:\Texode\ClientApp\obj\Release\InfoCards Client App.pdb
+D:\Texode\ClientApp\obj\Release\ClientApp.csproj.AssemblyReference.cache
