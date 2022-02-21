@@ -1,0 +1,84 @@
+﻿<Window x:Class="ClientApp.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClientApp.Views" xmlns:viewmodels="clr-namespace:ClientApp.ViewModels"
+        mc:Ignorable="d"
+        Title="InfoCards" Height="550" Width="1100"
+        MinHeight="520" MinWidth="540" FontSize="13"
+        
+        WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <viewmodels:MainVM/>
+    </Window.DataContext>
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource GlobalButtonStyle}"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition  />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  Grid.Row="1" 
+                      ItemsSource="{Binding Cards}" SelectedItem="{Binding SelectedCard}" 
+                      Background="Gainsboro" BorderThickness="0"
+                      SelectionMode="Single">
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel HorizontalAlignment="Center" Margin="5,10,5,0"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <local:Card x:Name="CardControl" Margin="5,5,5,10"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel Grid.Column="1" Background="White">
+            <StackPanel Margin="15" IsEnabled="{Binding CollectionViewIsEnabled, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                <Button Content="Refresh" Command="{Binding UpdateButtonCommand}" Margin="0,5,0,0"/>
+                <Button Content="Add" Command="{Binding AddButtonCommand}" Margin="0,5,0,0"/>
+                <Button Content="Remove" Command="{Binding DeleteButtonCommand}" Margin="0,5,0,0"/>
+                <Label Content="Select to edit or add new" HorizontalAlignment="Center" Margin="3"/>
+            </StackPanel>
+            <Grid Height="500" Margin="15,0,15,0" Grid.Column="1" IsEnabled="{Binding CardEditIsActive,  Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="120"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row ="0" >
+                    <Label Content="Name" Margin="0,0,0,5"/>
+                    <TextBox Text="{Binding Path=TempCard.Label, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Padding="3"
+                                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="170"/>
+                    <Label Content="Image" Margin="0,10,0,5"/>
+                    <Button  Content="Open" Margin="0,0,0,10" Command="{Binding ChooseImageCommand}">
+                    </Button>
+                </StackPanel>
+                <Image
+            Grid.Row ="1"
+                Width="170"
+                Source="{Binding Path=TempCard.ImageSource, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                VerticalAlignment="Center" 
+                Stretch="UniformToFill" />
+                <Grid Grid.Row="2" Margin="0,20,0,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Save" Grid.Column ="0" Margin="0,0,2,0" Command="{Binding SaveCardCommand}"/>
+                    <Button Content="Cancel" Grid.Column ="1" Margin="2,0,0,0" Command="{Binding CancelCardEditCommand}"/>
+                </Grid>
+            </Grid>
+        </StackPanel>
+
+    </Grid>
+</Window>

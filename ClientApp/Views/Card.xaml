@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="ClientApp.Views.Card"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ClientApp.Views" 
+             xmlns:viewmodels="clr-namespace:ClientApp.ViewModels" 
+             mc:Ignorable="d" 
+             Height="180" Width="250" Cursor="Hand">
+
+    <Border x:Name="Border" x:FieldModifier="public"
+        Background="White"
+        CornerRadius="5">
+        <Border.Effect>
+            <DropShadowEffect 
+                Color="DarkGray" 
+                Opacity="0.5" 
+                BlurRadius="10" 
+                Direction="-85" 
+                RenderingBias="Quality" 
+                ShadowDepth="3" />
+        </Border.Effect>
+        <Grid 
+            Background="White" 
+            Margin="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock 
+                Grid.Row="0" 
+                Text="{Binding Path=Label}" 
+                FontFamily="SegoeUI" FontSize="16" 
+                Margin="0,0,20,10" 
+                TextTrimming="CharacterEllipsis"
+                HorizontalAlignment="Left"/>
+            <Image 
+                Grid.Row="1" 
+                x:Name="image" 
+                Source="{Binding Path=ImageSource, UpdateSourceTrigger=PropertyChanged}"
+                VerticalAlignment="Center" 
+                Stretch="UniformToFill"/>
+
+            <CheckBox 
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Top"
+                IsChecked="{Binding Path=Checked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+       
+    </Border>
+</UserControl>
